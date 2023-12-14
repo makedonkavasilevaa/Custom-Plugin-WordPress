@@ -223,7 +223,7 @@ function last_posts_shortcode($attr) {
             $out .= '<div class="feat-image">' . get_the_post_thumbnail() . '</div>';
         }
 
-        $out .= '<div class="excerpt">' . get_the_excerpt() . '</div>';
+        $out .= '<div class="excerpt">' . wp_trim_words(get_the_excerpt(), 200) . '</div>';
         $out .= '</article>';
     endwhile;
 
