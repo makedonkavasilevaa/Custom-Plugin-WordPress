@@ -224,6 +224,7 @@ function last_posts_shortcode($attr) {
         }
 
         $out .= '<div class="excerpt">' . wp_trim_words(get_the_excerpt(), 200) . '</div>';
+        $out .= '<div class="learn-more"><a href="'  . get_permalink() . '">Learn more</a></div>';
         $out .= '</article>';
     endwhile;
 

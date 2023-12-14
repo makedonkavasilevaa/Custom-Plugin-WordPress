@@ -19,10 +19,14 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
+    flex-wrap: wrap;
+    margin:  10px 30px;
+    padding: 10px;
 }
 
 article{
     border-radius: 5px;
+    flex: 0 0 33.333333%;
     width: calc(33.33% - 20px); /* Adjust margin as needed */
     margin: 10px; /* Adjust as needed */
     box-sizing: border-box;
