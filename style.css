@@ -13,3 +13,33 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twentytwentyfour
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
 */
+
+
+.last-posts-list{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+article{
+    border-radius: 5px;
+    width: calc(33.33% - 20px); /* Adjust margin as needed */
+    margin: 10px; /* Adjust as needed */
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+article h2 {
+    margin-bottom: 10px;
+}
+
+article img {
+    max-width: calc(33.33% - 20px);
+    height: auto;
+}
+
+article .excerpt {
+    color: #555;
+}
+
