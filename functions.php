@@ -204,3 +204,35 @@ if ( ! function_exists( 'twentytwentyfour_pattern_categories' ) ) :
 endif;
 
 add_action( 'init', 'twentytwentyfour_pattern_categories' );
+
+//New functions - Makedonka Vasileva
+
+function last_posts_shortcode($attr) {
+    $attr = shortcode_atts(array('count' => 6,),$attr, 'last_posts');
+
+    $args = array('posts_per_page' => $attr['count'],);
+    $query = new WP_Query($args);
+
+    $out = '<div class="last-posts-list">';
+
+    while ($query->have_posts()) : $query->the_post();
+        $out .= '<article>';
+        $out .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
+
+        if (has_post_thumbnail()) {
+            $out .= '<div class="feat-image">' . get_the_post_thumbnail() . '</div>';
+        }
+
+        $out .= '<div class="excerpt">' . get_the_excerpt() . '</div>';
+        $out .= '</article>';
+    endwhile;
+
+    wp_reset_postdata();
+
+    $out .= '</div>';
+
+    return $out;
+}
+
+// Add the shortcode
+add_shortcode('last_posts', 'last_posts_shortcode');
